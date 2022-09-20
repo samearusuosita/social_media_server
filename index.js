@@ -10,6 +10,8 @@ import getAllUsers from './Routes/UserRoute.js';
 import PostRoute from './Routes/postRoute.js';
 import UploadRoute from './Routes/UploadRoute.js';
 
+let PORT = process.env.PORT || 5001
+
 
 
 // chat router
@@ -44,7 +46,7 @@ app.use(cors());
 dotenv.config()
 
 mongoose.connect(process.env.MONGO_DB, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => app.listen(process.env.PORT || 5001, ()=> console.log(`Server online on ${process.env.PORT}`)))
+.then(() => app.listen(PORT, ()=> console.log(`Server online on ${PORT}`)))
 .catch((error) => console.log(error));
 
 
