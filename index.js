@@ -44,7 +44,7 @@ app.use(cors());
 dotenv.config()
 
 mongoose.connect(process.env.MONGO_DB, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => app.listen(process.env.PORT, ()=> console.log(`Server online on ${process.env.PORT}`)))
+.then(() => app.listen(process.env.PORT || 5001, ()=> console.log(`Server online on ${process.env.PORT}`)))
 .catch((error) => console.log(error));
 
 
